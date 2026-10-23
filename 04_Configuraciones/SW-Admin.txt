@@ -1,0 +1,13 @@
+enable
+configure terminal
+vlan 10
+name VLAN_Ingenieria
+vlan 20
+name VLAN_Administracion
+vlan 30
+name VLAN_Financiera
+vlan 40
+name VLAN_DataCenter
+interface GigabitEthernet0/1
+switchport mode trunk
+end

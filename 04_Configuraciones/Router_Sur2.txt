@@ -1,0 +1,7 @@
+enable
+configure terminal
+router ospf 1
+router-id 3.3.3.3
+network 172.30.4.68 0.0.0.3 area 0
+network 172.30.2.128 0.0.0.127 area 0
+end
