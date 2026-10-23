@@ -1,0 +1,15 @@
+enable
+configure terminal
+hostname Router-Occidente
+
+interface Serial0/0/0
+ description Enlace hacia Core
+ ip address 172.30.4.74 255.255.255.252
+ no shutdown
+ exit
+
+interface GigabitEthernet0/0
+ description Hacia LAN Occidente
+ ip address 172.30.3.1 255.255.255.128
+ no shutdown
+ exit

@@ -1,0 +1,39 @@
+enable
+configure terminal
+hostname Router-Core
+
+interface Serial0/0/0
+ description Enlace a Sucursal Norte
+ ip address 172.30.4.65 255.255.255.252
+ no shutdown
+ exit
+
+interface Serial0/0/1
+ description Enlace a Sucursal Sur
+ ip address 172.30.4.69 255.255.255.252
+ no shutdown
+ exit
+
+interface Serial0/1/0
+ description Enlace a Sucursal Occidente
+ ip address 172.30.4.73 255.255.255.252
+ no shutdown
+ exit
+
+interface GigabitEthernet0/0
+ description Hacia SW-DataCenter
+ ip address 172.30.4.1 255.255.255.192
+ no shutdown
+ exit
+
+interface GigabitEthernet0/1
+ description Hacia SW-Ingenieria
+ ip address 172.30.0.1 255.255.255.0
+ no shutdown
+ exit
+
+interface GigabitEthernet0/2
+ description Hacia SW-Admin
+ ip address 172.30.2.1 255.255.255.128
+ no shutdown
+ exit

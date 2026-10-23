@@ -1,0 +1,15 @@
+enable
+configure terminal
+hostname Router-Sur
+
+interface Serial0/0/0
+ description Enlace hacia Core
+ ip address 172.30.4.70 255.255.255.252
+ no shutdown
+ exit
+
+interface GigabitEthernet0/0
+ description Hacia LAN Sur
+ ip address 172.30.2.129 255.255.255.128
+ no shutdown
+ exit

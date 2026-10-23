@@ -1,0 +1,15 @@
+enable
+configure terminal
+hostname Router-Norte
+
+interface Serial0/0/0
+ description Enlace hacia Core
+ ip address 172.30.4.66 255.255.255.252
+ no shutdown
+ exit
+
+interface GigabitEthernet0/0
+ description Hacia LAN Norte
+ ip address 172.30.1.1 255.255.255.0
+ no shutdown
+ exit
