@@ -1,0 +1,138 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname R-EDGE
+!
+!
+!
+enable secret 5 $1$mERr$CExsptIDPO2k4owtPNYPC1
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+username admin privilege 15 secret 5 $1$mERr$z5RiBg967LBD2aShzRZeu/
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524I97Q-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip ssh time-out 60
+no ip domain-lookup
+ip domain-name nexus.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Enlace a R-CORE
+ ip address 172.30.4.86 255.255.255.252
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ description Enlace a ISP - bloque publico
+ ip address 200.100.50.2 255.255.255.252
+ ip nat outside
+ ip access-group ACL-INTERNET-IN in
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description Gateway Wi-Fi invitados VLAN 60 (aislado por ACL)
+ ip address 172.30.5.1 255.255.255.0
+ ip helper-address 172.30.4.11
+ ip helper-address 172.30.4.16
+ ip nat inside
+ ip access-group ACL-INVITADOS in
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ router-id 7.7.7.7
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/2
+ network 172.30.4.84 0.0.0.3 area 1
+ network 172.30.5.0 0.0.0.255 area 1
+ default-information originate
+!
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
+ip nat inside source static 172.30.4.12 200.100.50.10 
+ip classless
+ip route 0.0.0.0 0.0.0.0 200.100.50.1 
+ip route 172.30.0.0 255.255.248.0 172.30.4.85 120
+!
+ip flow-export version 9
+!
+!
+access-list 1 permit 172.30.0.0 0.0.7.255
+ip access-list standard ACL-GESTION
+ remark Solo gestion y TI pueden administrar por SSH
+ permit 172.30.6.128 0.0.0.31
+ permit 172.30.7.0 0.0.0.255
+ deny any
+ip access-list extended ACL-INTERNET-IN
+ remark Trafico permitido desde Internet
+ permit tcp any host 200.100.50.10 eq www
+ permit tcp any host 200.100.50.10 eq 443
+ permit tcp any any established
+ permit icmp any any echo-reply
+ permit icmp any any unreachable
+ deny ip any any
+ip access-list extended ACL-INVITADOS
+ remark Invitados solo DHCP, DNS e Internet
+ permit udp any any eq bootps
+ permit udp any host 172.30.4.10 eq domain
+ permit udp any host 172.30.4.17 eq domain
+ deny ip any 172.30.0.0 0.0.255.255
+ permit ip any any
+!
+banner motd #Acceso restringido - Nexus Corporation#
+!
+!
+!
+!
+line con 0
+ password 7 080F49561C0A26181C2B5E52
+ logging synchronous
+ login
+!
+line aux 0
+!
+line vty 0 4
+ access-class ACL-GESTION in
+ login local
+ transport input ssh
+!
+!
+!
+end

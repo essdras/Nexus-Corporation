@@ -1,0 +1,253 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname ASW-ING
+!
+enable secret 5 $1$mERr$CExsptIDPO2k4owtPNYPC1
+!
+!
+!
+ip ssh version 2
+ip ssh time-out 60
+no ip domain-lookup
+ip domain-name nexus.com
+!
+username admin secret 5 $1$mERr$z5RiBg967LBD2aShzRZeu/
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description Usuarios VLAN 10
+ switchport access vlan 10
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky 
+ switchport port-security mac-address sticky 000B.BE2B.5768
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/2
+ description Usuarios VLAN 10
+ switchport access vlan 10
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky 
+ switchport port-security mac-address sticky 0002.1769.A657
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/3
+ description Usuarios VLAN 10
+ switchport access vlan 10
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky 
+ switchport port-security mac-address sticky 000A.F31E.2166
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/4
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/5
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/6
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/7
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/8
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/9
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/10
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/11
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/12
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/13
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/14
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/15
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/16
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/17
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/18
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/19
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/20
+ description Access Point VLAN 60
+ switchport access vlan 60
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 10
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 000C.CFE5.9433
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/21
+ description Enlace a R-EDGE Gi0/2 - gateway invitados
+ switchport access vlan 60
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/22
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/23
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface FastEthernet0/24
+ description Puerto sin uso
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ shutdown
+!
+interface GigabitEthernet0/1
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,50,60,99,999
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,50,60,99,999
+ switchport mode trunk
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan99
+ ip address 172.30.6.134 255.255.255.224
+!
+ip default-gateway 172.30.6.129
+!
+banner motd #Acceso restringido - Nexus Corporation#
+!
+!
+!
+ip access-list standard ACL-GESTION
+ remark Solo gestion y TI pueden administrar por SSH
+ permit 172.30.6.128 0.0.0.31
+ permit 172.30.7.0 0.0.0.255
+ deny any
+line con 0
+ password 7 080F49561C0A26181C2B5E52
+ logging synchronous
+ login
+!
+line vty 0 4
+ access-class ACL-GESTION in
+ login local
+ transport input ssh
+line vty 5 15
+ login
+!
+!
+!
+!
+end
