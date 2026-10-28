@@ -1,0 +1,169 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname SW-OCC
+!
+enable secret 5 $1$mERr$CExsptIDPO2k4owtPNYPC1
+!
+!
+!
+ip ssh version 2
+ip ssh time-out 60
+no ip domain-lookup
+ip domain-name nexus.com
+!
+username admin secret 5 $1$mERr$z5RiBg967LBD2aShzRZeu/
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky 
+ switchport port-security mac-address sticky 0090.2B26.2D47
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky 
+ switchport port-security mac-address sticky 0090.2B41.89EE
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky 
+ switchport port-security mac-address sticky 0090.0C13.EA09
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/4
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/5
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/6
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/7
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/8
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/9
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/10
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/11
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/12
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/13
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/14
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/15
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/16
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/17
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/18
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/19
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/20
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/21
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/22
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/23
+ description Puerto sin uso
+ shutdown
+!
+interface FastEthernet0/24
+ description Puerto sin uso
+ shutdown
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 172.30.3.2 255.255.255.128
+!
+ip default-gateway 172.30.3.1
+!
+banner motd #Acceso restringido - Nexus Corporation#
+!
+!
+!
+ip access-list standard ACL-GESTION
+ remark Solo gestion y TI pueden administrar por SSH
+ permit 172.30.6.128 0.0.0.31
+ permit 172.30.7.0 0.0.0.255
+ deny any
+line con 0
+ password 7 080F49561C0A26181C2B5E52
+ logging synchronous
+ login
+!
+line vty 0 4
+ access-class ACL-GESTION in
+ login local
+ transport input ssh
+line vty 5 15
+ login
+!
+!
+!
+!
+end
