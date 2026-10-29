@@ -1,0 +1,16 @@
+===== Falla 6: POOL-ING inicio .1 max 3 (SRV-DHCP) y POOL-ING-B inicio .1 max 3 (SRV-DHCP-2)
+ipconfig /release
+
+   IP Address......................: 0.0.0.0
+   Subnet Mask.....................: 0.0.0.0
+   Default Gateway.................: 0.0.0.0
+   DNS Server......................: 0.0.0.0
+
+C:\>ipconfig /renew
+DHCP request failed. 
+
+C:\>DHCP request failed. 
+
+C:\>
+SRV-DHCP POOL-ING start=172.30.0.1 max=3
+SRV-DHCP-2 POOL-ING-B start=172.30.0.1 max=3

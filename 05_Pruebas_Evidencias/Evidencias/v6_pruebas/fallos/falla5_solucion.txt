@@ -1,0 +1,18 @@
+===== Verificación tras quitar ACL-MALA
+ping -n 2 www.nexus.com
+
+Pinging 172.30.4.12 with 32 bytes of data:
+
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=2ms TTL=127
+
+Ping statistics for 172.30.4.12:
+    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 2ms, Maximum = 10ms, Average = 6ms
+
+C:\>
+show ip interface Vlan10 | include access list
+  Outgoing access list is not set 
+  Inbound  access list is not set 
+DSW1-SEDE#

@@ -1,0 +1,23 @@
+===== Falla 6 solución: pools restaurados (POOL-ING .11/170, POOL-ING-B .181/70)
+C:\>ipconfig /renew
+
+   IP Address......................: 172.30.0.181
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: 172.30.0.1
+   DNS Server......................: 172.30.4.17
+
+C:\>ping -n 4 www.nexus.com
+
+Pinging 172.30.4.12 with 32 bytes of data:
+
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+
+Ping statistics for 172.30.4.12:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 10ms, Average = 2ms
+
+C:\>

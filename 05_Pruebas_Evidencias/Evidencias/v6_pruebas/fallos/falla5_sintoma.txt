@@ -1,0 +1,34 @@
+===== PC-ING-1 (172.30.0.12, VLAN 10, DNS .10)
+ping -n 2 www.nexus.com
+Ping request could not find host www.nexus.com. Please check the name and try again.
+C:\>ping -n 4 172.30.4.12
+
+Pinging 172.30.4.12 with 32 bytes of data:
+
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+
+Ping statistics for 172.30.4.12:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>
+===== DSW1-SEDE
+show access-lists ACL-MALA
+Extended IP access list ACL-MALA
+    deny udp any host 172.30.4.10 eq domain (4 match(es))
+    deny udp any host 172.30.4.17 eq domain
+    permit ip any any (42 match(es))
+
+DSW1-SEDE#
+===== DSW2-SEDE
+show access-lists ACL-MALA
+Extended IP access list ACL-MALA
+    deny udp any host 172.30.4.10 eq domain
+    deny udp any host 172.30.4.17 eq domain
+    permit ip any any (39 match(es))
+
+DSW2-SEDE#
