@@ -1,0 +1,25 @@
+show ip route 172.30.0.10
+Routing entry for 172.30.0.0/24
+Known via "ospf 1", distance 110, metric 3, type intra area
+  Last update from 172.30.4.85 on GigabitEthernet0/0, 00:03:44 ago
+  Routing Descriptor Blocks:
+  * 172.30.4.85, from 1.1.1.1, 00:03:44 ago, via GigabitEthernet0/0
+      Route metric is 3, traffic share count is 1
+
+R-EDGE#show ip ospf database summary
+
+            OSPF Router with ID (7.7.7.7) (Process ID 1)
+
+                Summary Net Link States (Area 1)
+
+  LS age: 234
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(Network)
+  Link State ID: 172.30.0.0 (summary Network Number)
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000030
+  Checksum: 0xf26c
+  Length: 28
+  Network Mask: /24
+        TOS: 0  Metric: 2
+R-EDGE#
