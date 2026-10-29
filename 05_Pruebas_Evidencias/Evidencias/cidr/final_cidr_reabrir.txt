@@ -1,0 +1,138 @@
+== Nexus_Proyecto_Final.pkt (v6 + ING 172.30.7.0/24) guardado y reabierto, ~5 min, sin comandos de reparacion
+== R-EDGE
+show ip route ospf
+     172.30.0.0/16 is variably subnetted, 5 subnets, 4 masks
+O IA    172.30.0.0 [110/2] via 172.30.4.85, 00:02:42, GigabitEthernet0/0
+
+R-EDGE#show ip ospf database summary
+
+            OSPF Router with ID (7.7.7.7) (Process ID 1)
+
+                Summary Net Link States (Area 1)
+
+  LS age: 192
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(Network)
+  Link State ID: 172.30.0.0 (summary Network Number)
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000006
+  Checksum: 0x1a77
+  Length: 28
+  Network Mask: /21
+        TOS: 0  Metric: 1
+R-EDGE#
+== PC-ING-1
+ping -n 6 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Request timed out.
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Request timed out.
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 6, Received = 4, Lost = 2 (34% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 10ms, Average = 2ms
+
+C:\>
+== PC-ADM-1
+ping -n 6 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 6, Received = 4, Lost = 2 (34% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+C:\>
+== PC-NORTE-1
+ping -n 6 www.nexus.com
+
+Pinging 172.30.4.12 with 32 bytes of data:
+
+Request timed out.
+
+== PC-SUR-1
+ping -n 6 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Request timed out.
+Reply from 8.8.8.8: bytes=32 time=2ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=2ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=4ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 6, Received = 5, Lost = 1 (17% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 4ms, Average = 2ms
+
+C:\>
+== PC-OCC-1
+ping -n 6 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=2ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=2ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 6, Received = 6, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 2ms, Average = 1ms
+
+C:\>
+== LAP-INVITADO
+ping -n 6 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Reply from 8.8.8.8: bytes=32 time=51ms TTL=126
+Reply from 8.8.8.8: bytes=32 time=26ms TTL=126
+Reply from 8.8.8.8: bytes=32 time=32ms TTL=126
+Reply from 8.8.8.8: bytes=32 time=14ms TTL=126
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=126
+Reply from 8.8.8.8: bytes=32 time=20ms TTL=126
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 6, Received = 6, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 10ms, Maximum = 51ms, Average = 25ms
+
+C:\>
+== PC-FIN-1
+ping -n 6 172.30.7.1
+
+Pinging 172.30.7.1 with 32 bytes of data:
+
+Reply from 172.30.7.1: bytes=32 time=36ms TTL=255
+Reply from 172.30.7.1: bytes=32 time<1ms TTL=255
+Reply from 172.30.7.1: bytes=32 time=1ms TTL=255
+Reply from 172.30.7.1: bytes=32 time<1ms TTL=255
+Reply from 172.30.7.1: bytes=32 time<1ms TTL=255
+Reply from 172.30.7.1: bytes=32 time<1ms TTL=255
+
+Ping statistics for 172.30.7.1:
+    Packets: Sent = 6, Received = 6, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 36ms, Average = 6ms
+
+C:\>

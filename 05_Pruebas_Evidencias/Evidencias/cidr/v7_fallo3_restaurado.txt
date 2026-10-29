@@ -1,0 +1,22 @@
+== FALLO 3 restaurado: area 0 range de nuevo (45 s)
+show ip route ospf
+     172.30.0.0/16 is variably subnetted, 5 subnets, 4 masks
+O IA    172.30.0.0 [110/2] via 172.30.4.85, 00:00:36, GigabitEthernet0/0
+
+R-EDGE#show ip ospf database summary
+
+            OSPF Router with ID (7.7.7.7) (Process ID 1)
+
+                Summary Net Link States (Area 1)
+
+  LS age: 41
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(Network)
+  Link State ID: 172.30.0.0 (summary Network Number)
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 8000004e
+  Checksum: 0x89bf
+  Length: 28
+  Network Mask: /21
+        TOS: 0  Metric: 1
+R-EDGE#

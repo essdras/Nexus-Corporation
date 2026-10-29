@@ -1,0 +1,43 @@
+== v7_trabajo reabierto ~4 min, R-EDGE
+show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is 200.100.50.1 to network 0.0.0.0
+
+     172.30.0.0/16 is variably subnetted, 5 subnets, 4 masks
+O IA    172.30.0.0/21 [110/2] via 172.30.4.85, 00:02:09, GigabitEthernet0/0
+C       172.30.4.84/30 is directly connected, GigabitEthernet0/0
+L       172.30.4.86/32 is directly connected, GigabitEthernet0/0
+C       172.30.5.0/24 is directly connected, GigabitEthernet0/2
+L       172.30.5.1/32 is directly connected, GigabitEthernet0/2
+     200.100.50.0/24 is variably subnetted, 2 subnets, 2 masks
+C       200.100.50.0/30 is directly connected, GigabitEthernet0/1
+L       200.100.50.2/32 is directly connected, GigabitEthernet0/1
+S*   0.0.0.0/0 [1/0] via 200.100.50.1
+
+R-EDGE#show ip ospf database summary
+
+            OSPF Router with ID (7.7.7.7) (Process ID 1)
+
+                Summary Net Link States (Area 1)
+
+  LS age: 159
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(Network)
+  Link State ID: 172.30.0.0 (summary Network Number)
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000006
+  Checksum: 0x1a77
+  Length: 28
+  Network Mask: /21
+        TOS: 0  Metric: 1
+R-EDGE#
+== R-CORE
+show ip route | include Null0
+R-CORE#

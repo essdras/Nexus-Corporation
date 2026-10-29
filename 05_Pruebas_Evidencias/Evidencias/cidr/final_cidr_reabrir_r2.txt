@@ -1,0 +1,92 @@
+== Ronda 2 (~7 min tras reabrir)
+
+== PC-ING-1
+ping -n 6 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Reply from 8.8.8.8: bytes=32 time=20ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=12ms TTL=124
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 6, Received = 6, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 20ms, Average = 7ms
+
+C:\>
+== PC-ADM-1
+ping -n 6 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=19ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 6, Received = 6, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 19ms, Average = 6ms
+
+C:\>
+== PC-NORTE-1
+ping -n 6 www.nexus.com
+
+Pinging 172.30.4.12 with 32 bytes of data:
+
+Reply from 172.30.4.12: bytes=32 time=30ms TTL=125
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=125
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=125
+Reply from 172.30.4.12: bytes=32 time=31ms TTL=125
+Reply from 172.30.4.12: bytes=32 time=8ms TTL=125
+Reply from 172.30.4.12: bytes=32 time=9ms TTL=125
+
+Ping statistics for 172.30.4.12:
+    Packets: Sent = 6, Received = 6, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 8ms, Maximum = 31ms, Average = 16ms
+
+C:\>
+== PC-SUR-1
+ping -n 6 172.30.7.1
+
+Pinging 172.30.7.1 with 32 bytes of data:
+
+Reply from 172.30.7.1: bytes=32 time=31ms TTL=253
+Request timed out.
+Reply from 172.30.7.1: bytes=32 time=1ms TTL=253
+Reply from 172.30.7.1: bytes=32 time=9ms TTL=253
+Reply from 172.30.7.1: bytes=32 time=25ms TTL=253
+Reply from 172.30.7.1: bytes=32 time=1ms TTL=253
+
+Ping statistics for 172.30.7.1:
+    Packets: Sent = 6, Received = 5, Lost = 1 (17% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 31ms, Average = 13ms
+
+C:\>
+== PC-ING-2
+ping -n 6 172.30.3.12
+
+Pinging 172.30.3.12 with 32 bytes of data:
+
+Request timed out.
+Reply from 172.30.3.12: bytes=32 time=3ms TTL=125
+Reply from 172.30.3.12: bytes=32 time=2ms TTL=125
+Reply from 172.30.3.12: bytes=32 time=1ms TTL=125
+Reply from 172.30.3.12: bytes=32 time=2ms TTL=125
+Reply from 172.30.3.12: bytes=32 time=1ms TTL=125
+
+Ping statistics for 172.30.3.12:
+    Packets: Sent = 6, Received = 5, Lost = 1 (17% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 3ms, Average = 1ms
+
+C:\>

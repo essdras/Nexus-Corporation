@@ -1,0 +1,41 @@
+show ip ospf database summary
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+                Summary Net Link States (Area 0)
+
+  LS age: 175
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(Network)
+  Link State ID: 172.30.4.84 (summary Network Number)
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000001
+  Checksum: 0xbd7c
+  Length: 28
+  Network Mask: /30
+        TOS: 0  Metric: 1
+
+  LS age: 140
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(Network)
+  Link State ID: 172.30.5.0 (summary Network Number)
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000003
+  Checksum: 0x1671
+  Length: 28
+  Network Mask: /24
+        TOS: 0  Metric: 2
+
+                Summary Net Link States (Area 1)
+
+  LS age: 175
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(Network)
+  Link State ID: 172.30.0.0 (summary Network Number)
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000006
+  Checksum: 0x1a77
+  Length: 28
+  Network Mask: /21
+        TOS: 0  Metric: 1
+R-CORE#
