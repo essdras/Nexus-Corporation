@@ -1,0 +1,186 @@
+=== PC-ING-1
+ping -n 50 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+
+Reply from 8.8.8.8: bytes=32 time=23ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=9ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=2ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=13ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=36ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=13ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=2ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=3ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=3ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time<1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=1ms TTL=124
+Reply from 8.8.8.8: bytes=32 time=6ms TTL=124
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 50, Received = 50, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 36ms, Average = 4ms
+
+C:\>
+=== PC-ING-2
+ping -n 50 172.30.4.12
+
+Pinging 172.30.4.12 with 32 bytes of data:
+
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=11ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=23ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=24ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=12ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=11ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=11ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=10ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=8ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=19ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=9ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time=1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+Reply from 172.30.4.12: bytes=32 time<1ms TTL=127
+
+Ping statistics for 172.30.4.12:
+    Packets: Sent = 50, Received = 50, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 24ms, Average = 4ms
+
+C:\>
+=== PC-ING-3
+ping -n 50 172.30.2.218
+
+Pinging 172.30.2.218 with 32 bytes of data:
+
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=19ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=7ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=11ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=4ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time<1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time<1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=11ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=10ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=11ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=2ms TTL=125
+Reply from 172.30.2.218: bytes=32 time<1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=10ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=1ms TTL=125
+Reply from 172.30.2.218: bytes=32 time=25ms TTL=125
+
+Ping statistics for 172.30.2.218:
+    Packets: Sent = 50, Received = 50, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 25ms, Average = 3ms
+
+C:\>
